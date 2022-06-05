@@ -1,22 +1,36 @@
 var gameData = {
     Shib: 0,
+    Cavalier: 0,
     ShibPerClick: 1,
     ShibPerClickCost: 10,
-    ShibPickCost: 25,
-    ShibPerPick: 5
+    CavPickCost: 25,
+    CavPerPick: 5,
+    CavPerClick: 1,
+    UpgradeCost: 1000
   }
-  
+  function getUpgrade() {
+    if (gameData.Shib >= gameData.UpgradeCost) {
+    gamedata.Shib -= gamedata.UpgradeCost
+    document.getElementById("buycav").style.display = "inline-block"
+    document.getElementById("upgrade").style.display = "none"
+    document.getElementById("shibMined").innerHTML = gameData.shib + " Shib Mined"
+  }
+}
   function mineShib() {
     gameData.Shib += gameData.ShibPerClick
     document.getElementById("ShibMined").innerHTML = gameData.Shib + " Shib Mined"
   }
+  function buyCav() {
+    gameData.Cavalier += gameData.CavPerClick
+    document.getElementById("cavaliersMined").innerHTML = gameData.Cavalier + " Cavaliers Mined"
+  }
   function buyPick() {
-    if (gameData.Shib >= gameData.ShibPerPickCost) {
-      gameData.Shib -= gameData.ShibPerPickCost
-      gameData.ShibPerPick += 5
-      gamedata.ShibPerPickCost *=2
-      document.getElementById("pickUpgrade").innerHTML = "Purchase Pickaxe (Currently Own " + gameData.ShibPerPick +  ") Cost: " + gameData.ShibPickCost + " Shib"
-      document.getElementById("ShibMined").innerHTML = gameData.Shib + " Shib Mined"
+    if (gameData.Cavalier >= gameData.CavPickCost) {
+      gameData.Cavalier -= gameData.CavPerPick
+      gameData.CavPerPick += 5
+      gamedata.CavPickCost *=2
+      document.getElementById("pickUpgrade").innerHTML = "Purchase Pickaxe (Currently Own " + gameData.CavPerPick +  ") Cost: " + gameData.CavPerPick + " Cavaliers"
+      document.getElementById("cavMined").innerHTML = gameData.Shib + " Cavaliers Mined"
     }
   }
   
@@ -33,3 +47,5 @@ var gameData = {
   var mainGameLoop = window.setInterval(function() {
     mineShib() //reuse with dif var and function for incremental upgradess 1000 is in ms
   }, 1000)
+ 
+
