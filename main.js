@@ -1,6 +1,5 @@
 var gameData = {
     Shib: 0,
-    Shib2: 0,
     ShibPerClick: 1,
     ShibPerClickCost: 10,
     ShibPickCost: 25,
@@ -12,11 +11,12 @@ var gameData = {
     document.getElementById("ShibMined").innerHTML = gameData.Shib + " Shib Mined"
   }
   function buyPick() {
-    if (gameData.Shib2 >= gameData.ShibPerPickCost) {
-      gameData.Shib2 -= gameData.ShibPerPickCost
+    if (gameData.Shib >= gameData.ShibPerPickCost) {
+      gameData.Shib -= gameData.ShibPerPickCost
       gameData.ShibPerPick += 5
       gamedata.ShibPerPickCost *=2
       document.getElementById("pickUpgrade").innerHTML = "Purchase Pickaxe (Currently Own " + gameData.ShibPerPick +  ") Cost: " + gameData.ShibPickCost + " Shib"
+      document.getElementById("ShibMined").innerHTML = gameData.Shib + " Shib Mined"
     }
   }
   
