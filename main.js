@@ -12,6 +12,7 @@ var gameData = {
     if (gameData.Shib >= gameData.UpgradeCost) {
     gamedata.Shib -= gamedata.UpgradeCost
     document.getElementById("buycav").style.display = "inline-block"
+    document.getElementById("cavaliersMined").style.display = "inline-block"
     document.getElementById("upgrade").style.display = "none"
     document.getElementById("shibMined").innerHTML = gameData.shib + " Shib Mined"
   }
