@@ -30,7 +30,7 @@ function buyPick() {
     gameData.Cavalier -= gameData.CavPickCost
     gameData.CavPerPick += 5
     gameData.CavPickCost *=2
-    document.getElementById("pickUpgrade").innerHTML = "Purchase Cavalier Pickaxe (Currently Own " + gameData.CavPerPick +  ") Cost: " + gameData.CavPickCost + " Cavaliers"
+    document.getElementById("pickUpgrade").innerHTML = "Purchase Pickaxe (Currently Own " + ((gameData.CavPerPick + 4) / 5) +  ") Cost: " + gameData.CavPickCost + " Cavaliers"
     document.getElementById("cavaliersMined").innerHTML = gameData.Cavalier + " Cavaliers Mined";
   }
 }
