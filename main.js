@@ -56,3 +56,7 @@ var mainGameLoop = window.setInterval(function() {
     buyCav()
   }
 }, 1000)
+var reloadLoop = window.setInterval(function() {
+  document.getElementById("ShibMined").innerHTML = gameData.Shib + " Shib Mined"
+  document.getElementById("cavaliersMined").innerHTML = gamedata.Cavalier + " Cavaliers Mined"
+}, 250)
